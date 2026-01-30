@@ -2,14 +2,16 @@
  * API Service - Axios instance with all API calls
  * 
  * All API calls to the Ping Robot backend
- * Base URL: http://localhost:8000
+ * Base URL: Uses REACT_APP_API_URL environment variable (defaults to localhost for development)
+ * Production: https://ping-robot.onrender.com
  */
 
 import axios from 'axios';
 
 // Create axios instance with base configuration
+// Use environment variable for API URL (falls back to localhost for development)
 const api = axios.create({
-  baseURL: 'http://localhost:8000',
+  baseURL: process.env.REACT_APP_API_URL || 'http://localhost:8000',
   headers: {
     'Content-Type': 'application/json'
   }
