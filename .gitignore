@@ -1,0 +1,18 @@
+# Root level gitignore
+# Backend and frontend have their own .gitignore files
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE
+.idea/
+.vscode/
+*.code-workspace
+
+# Temporary files
+*.tmp
+*.temp
