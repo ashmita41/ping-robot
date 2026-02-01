@@ -69,14 +69,7 @@ app = FastAPI(
 # Production: Allow Netlify frontend URLs
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:3000",  # Local development
-        "http://127.0.0.1:3000",  # Local development
-        "https://pingrobot.netlify.app",  # Production frontend
-        "https://pingrobot.netlify.app/",  # Production frontend with trailing slash
-        # Netlify preview/deploy URLs (wildcard pattern)
-        "https://*.netlify.app",  # All Netlify preview URLs
-    ],
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],  # Allow all HTTP methods
     allow_headers=["*"],   # Allow all headers
